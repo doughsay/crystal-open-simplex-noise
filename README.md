@@ -11,6 +11,7 @@ dependencies:
   ...
   open-simplex-noise:
     github: doughsay/crystal-open-simplex-noise
+    version: "~> 1.0.0"
   ...
 ```
 
@@ -37,9 +38,9 @@ noise.generate(1.0, 2.0)
 
 ![3d-noise](examples/output/noise3d.png)
 
-## WIP
+4D Noise (2D slice):
 
-This is a work-in-progress; only 2D and 3D are implemented so far.
+![3d-noise](examples/output/noise4d.png)
 
 ## Credits
 

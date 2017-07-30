@@ -47,6 +47,20 @@ class ExmapleImageGenerator
     end
     StumpyPNG.write(canvas, "examples/output/noise3d.png")
   end
+
+  def generate_4d_image
+    puts "Generating 4D image..."
+    canvas = Canvas.new(WIDTH, HEIGHT)
+    (0...HEIGHT).each do |y|
+      (0...WIDTH).each do |x|
+        value = @noise.generate(x / FEATURE_SIZE, y / FEATURE_SIZE, 0.0, 0.0)
+        gray = ((value + 1) * 128).to_i
+        color = RGBA.from_rgb_n(gray, gray, gray, 8)
+        canvas[x, y] = color
+      end
+    end
+    StumpyPNG.write(canvas, "examples/output/noise4d.png")
+  end
 end
 
 ExmapleImageGenerator.new.generate_images
