@@ -29,7 +29,7 @@ noise.generate(1.0, 2.0)
 
 ## WIP
 
-This is a work-in-progress; only 2D is implemented so far.
+This is a work-in-progress; only 2D and 3D are implemented so far.
 
 ## Credits
 

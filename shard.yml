@@ -2,3 +2,11 @@ name: open-simplex-noise
 version: 0.1.0
 
 license: MIT
+
+development_dependencies:
+  stumpy_png:
+    github: stumpycr/stumpy_png
+    version: "~> 4.1.1"
+
+  stumpy_gif:
+    github: stumpycr/stumpy_gif
