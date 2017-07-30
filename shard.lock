@@ -4,10 +4,6 @@ shards:
     git: https://github.com/l3kn/stumpy_core.git
     commit: c4e42740f0f13b66d61d3c6e3596f7ee76b4edd4
 
-  stumpy_gif:
-    github: stumpycr/stumpy_gif
-    commit: 5c226eb77f8dc30e6c02023370db81ec0c35e71e
-
   stumpy_png:
     github: stumpycr/stumpy_png
     version: 4.1.1

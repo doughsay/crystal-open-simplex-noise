@@ -1,11 +1,9 @@
 require "stumpy_png"
-require "stumpy_gif"
 
 require "../src/open-simplex-noise"
 
 class ExmapleImageGenerator
   include StumpyPNG
-  include StumpyGIF
 
   WIDTH = 512
   HEIGHT = 512
@@ -34,7 +32,7 @@ class ExmapleImageGenerator
         canvas[x, y] = color
       end
     end
-    StumpyPNG.write(canvas, "noise2d.png")
+    StumpyPNG.write(canvas, "examples/output/noise2d.png")
   end
 
   def generate_3d_image
@@ -48,16 +46,13 @@ class ExmapleImageGenerator
         canvas[x, y] = color
       end
     end
-    StumpyPNG.write(canvas, "noise3d.png")
+    StumpyPNG.write(canvas, "examples/output/noise3d.png")
   end
 
   def generate_3d_animation
     puts "Generating 3D animation..."
-    frames = [] of Canvas
-
     (0...FRAMES).each do |z|
       canvas = Canvas.new(WIDTH, HEIGHT)
-
       (0...HEIGHT).each do |y|
         (0...WIDTH).each do |x|
           value = @noise.generate(x / FEATURE_SIZE, y / FEATURE_SIZE, z / FEATURE_SIZE)
@@ -66,22 +61,11 @@ class ExmapleImageGenerator
           canvas[x, y] = color
         end
       end
-
-      frames << canvas
+      puts "writing frame #{z}"
+      StumpyPNG.write(canvas, "examples/output/noise3d_frame#{z}.png")
+      # use imagemagick to create gif:
+      # convert -delay 10 -loop 0 -layers optimize examples/output/noise3d_frame*.png examples/output/noise3d.gif
     end
-
-    StumpyGIF.write(frames, "noise3d.gif", 10, :median_split)
-  end
-
-  def generate_4d_image
-    # puts 'Generating 2D slice of 4D...'
-    # canvas = Canvas.new(WIDTH, HEIGHT)
-    # for y in range(0, HEIGHT):
-    #     for x in range(0, WIDTH):
-    #         value = noise.generate(x / FEATURE_SIZE, y / FEATURE_SIZE, 0.0, 0.0)
-    #         color = int((value + 1) * 128)
-    #         im.putpixel((x, y), color)
-    # im.save('noise4d.png')
   end
 end
 

@@ -1,2 +1,3 @@
 .shards
 lib
+examples/output/noise3d_frame*
