@@ -27,6 +27,16 @@ noise.generate(1.0, 2.0)
 #=> -0.08284024020120388
 ```
 
+## Examples
+
+2D Noise:
+
+![2d-noise](examples/output/noise2d.png)
+
+3D Noise (2D slice):
+
+![3d-noise](examples/output/noise3d.png)
+
 ## WIP
 
 This is a work-in-progress; only 2D and 3D are implemented so far.

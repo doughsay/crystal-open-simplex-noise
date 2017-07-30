@@ -17,7 +17,6 @@ class ExmapleImageGenerator
   def generate_images
     generate_2d_image
     generate_3d_image
-    generate_3d_animation
     generate_4d_image
   end
 
@@ -47,25 +46,6 @@ class ExmapleImageGenerator
       end
     end
     StumpyPNG.write(canvas, "examples/output/noise3d.png")
-  end
-
-  def generate_3d_animation
-    puts "Generating 3D animation..."
-    (0...FRAMES).each do |z|
-      canvas = Canvas.new(WIDTH, HEIGHT)
-      (0...HEIGHT).each do |y|
-        (0...WIDTH).each do |x|
-          value = @noise.generate(x / FEATURE_SIZE, y / FEATURE_SIZE, z / FEATURE_SIZE)
-          gray = ((value + 1) * 128).to_i
-          color = RGBA.from_rgb_n(gray, gray, gray, 8)
-          canvas[x, y] = color
-        end
-      end
-      puts "writing frame #{z}"
-      StumpyPNG.write(canvas, "examples/output/noise3d_frame#{z}.png")
-      # use imagemagick to create gif:
-      # convert -delay 10 -loop 0 -layers optimize examples/output/noise3d_frame*.png examples/output/noise3d.gif
-    end
   end
 end
 
