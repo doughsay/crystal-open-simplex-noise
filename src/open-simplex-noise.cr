@@ -1,7 +1,4 @@
-require "./open-simplex-noise/constants"
-require "./open-simplex-noise/2d"
-require "./open-simplex-noise/3d"
-require "./open-simplex-noise/4d"
+require "./open-simplex-noise/*"
 
 class OpenSimplexNoise
   def initialize(seed : Int64 = DEFAULT_SEED)
