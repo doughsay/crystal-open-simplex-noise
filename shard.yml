@@ -1,5 +1,10 @@
 name: open-simplex-noise
-version: 1.0.0
+version: 1.0.1
+
+authors:
+  - Chris Dosé <chris.dose@gmail.com>
+
+crystal: 0.23.1
 
 license: MIT
 
