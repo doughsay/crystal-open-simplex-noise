@@ -1,3 +1,7 @@
+# NOTE: Unmaintained
+
+See this fork for a maintained version: https://github.com/j8r/crystal-open-simplex-noise
+
 # Open Simplex Noise
 [![Build Status](https://travis-ci.org/doughsay/crystal-open-simplex-noise.svg?branch=master)](https://travis-ci.org/doughsay/crystal-open-simplex-noise)
 
